@@ -1,3 +1,19 @@
+@media screen and (min-width: 993px){
+  body{font-size: 18px;}
+}
+
+@media screen and (max-width: 992px){
+  body{font-size: 12px;}
+}
+
+@media screen and (max-width: 768px){
+  body{font-size: 12px;}
+}
+
+@media screen and (max-width: 576px){
+  body{font-size: 10px;}
+}
+
 .site-header {
   -webkit-backdrop-filter: saturate(180%) blur(30px);
   backdrop-filter: saturate(180%) blur(30px);
@@ -12,4 +28,87 @@
 }
 .navbarmain{
 
+}
+.navbar-toggler-icon{
+
+}
+
+.carousel-inner{
+  background-color: #aaa;
+}
+
+.article-title{
+  font-weight: 500;
+  font-size: 1.3em;
+  color: #444;
+  transition: ease-in-out color .15s;
+}
+
+.article-title:hover{
+  color: #fff;
+  text-decoration: none;
+}
+.sfibox{
+  background-color: #bbb;
+  border-style: solid;
+  border-width: thin;
+  border-color: #555;
+  border-radius: 15px;
+  font-size: 1em;
+}
+.sfiboxsecond{
+  font-size: 1.4em;
+  height: 100%;
+  position: relative;
+}
+.sfi{
+  font-weight: 600;
+  font-size: 3em;
+  font-family: sans-serif;
+  background-color: #f00;
+  display: inline-block;
+  border-radius: 10px;
+  color: #eee;
+}
+p.sfititle{
+  font-size: 1.3em;
+  font-weight: 500;
+  color: #444;
+}
+.horizontallinearticle{
+  border-color: #777;
+}
+.carousel-inner{
+  border-radius: 10px;
+}
+.pictureclass{
+  background-image: url("../img/testimg.jpg");
+  background-size: cover;
+  width:100%;
+  -webkit-filter: blur(1px); /* Safari 6.0 - 9.0 */
+    filter: blur(1px);
+}
+.sfilist li.list-group-item:first-child{
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+.sfilist li.list-group-item:last-child{
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.sfilist li.list-group-item{
+  background-color: #bbb;
+}
+
+.carousel-indicators{
+  cursor: pointer;
+}
+.template{
+  display: none;
+}
+.fattext{
+  font-weight: 500;
+  color: #444;
+  font-size: 1.3em;
 }

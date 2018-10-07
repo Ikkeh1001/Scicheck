@@ -39,4 +39,55 @@ class Database{
     }
   }
 
+  function get_home_data(){
+    try{
+      $returnData = array();
+      $stmt = $this->dbh->prepare("SELECT * FROM scientries ORDER BY id DESC LIMIT 2");
+      $stmt->execute();
+
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          $obj = new stdClass();
+          $obj->id = $row["id"];
+          $obj->category = $row["category"];
+          $obj->timestamp = $row["timestamp"];
+          $obj->apl_date_begin = $row["apl_date_begin"];
+          $obj->apl_date_end = $row["apl_date_end"];
+          $obj->apl_geo = $row["apl_geo"];
+          $obj->apl_social = $row["apl_social"];
+          $obj->stat_method = $row["stat_method"];
+          $obj->stat_p = $row["stat_p"];
+          $obj->stat_median1 = $row["stat_median1"];
+          $obj->stat_mode1 = $row["stat_mode1"];
+          $obj->stat_mean1 = $row["stat_mean1"];
+          $obj->stat_mu1 = $row["stat_mu1"];
+          $obj->stat_deviation1 = $row["stat_deviation1"];
+          $obj->stat_sigma1 = $row["stat_sigma1"];
+          $obj->stat_samplesize1 = $row["stat_samplesize1"];
+          $obj->stat_median2 = $row["stat_median2"];
+          $obj->stat_mode2 = $row["stat_mode2"];
+          $obj->stat_mean2 = $row["stat_mean2"];
+          $obj->stat_mu2 = $row["stat_mu2"];
+          $obj->stat_deviation2 = $row["stat_deviation2"];
+          $obj->stat_sigma2 = $row["stat_sigma2"];
+          $obj->stat_samplesize2 = $row["stat_samplesize2"];
+          $obj->stat_tvalue = $row["stat_tvalue"];
+          $obj->p_hacking = $row["p_hacking"];
+
+          foreach ($obj as $key => $value) {
+            if($value == "0" OR $value == 0){
+              unset($obj->$key);
+            }
+          }
+
+          $returnData[] = $obj;
+      }
+      return $returnData;
+
+    }
+    catch (PDOException $e){
+      echo "get_home_data failed.";
+      die();
+    }
+  }
+
 }

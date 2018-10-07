@@ -2,8 +2,8 @@
 /**
  * This is the main API interface. AJAX will communicate with this file mostly.
  */
-
-require_once ("includes.php");
+require_once ("config.php");
+require_once ("database.php");
 
 $action = isset($_POST["action"]) ? $_POST["action"] : "";
 
@@ -15,5 +15,11 @@ switch ($action){
         echo json_encode($database->get_left($lang));
         die();
         break;
+
+    case "GET_HOME_DATA":
+      $database = new Database();
+      echo json_encode($database->get_home_data());
+      die();
+      break;
 
 }
