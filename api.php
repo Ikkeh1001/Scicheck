@@ -22,4 +22,10 @@ switch ($action){
       die();
       break;
 
+    case "GET_ARCHIVE_DATA":
+      $database = new Database();
+      echo json_encode($database->get_archive_data());
+      die();
+      break;
+
 }

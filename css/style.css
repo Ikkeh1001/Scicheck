@@ -3,15 +3,15 @@
 }
 
 @media screen and (max-width: 992px){
-  body{font-size: 12px;}
+  body{font-size: 18px;}
 }
 
 @media screen and (max-width: 768px){
-  body{font-size: 12px;}
+  body{font-size: 16px;}
 }
 
 @media screen and (max-width: 576px){
-  body{font-size: 10px;}
+  body{font-size: 14px;}
 }
 
 .site-header {
@@ -25,12 +25,6 @@
 .site-header a:hover {
   color: #fff;
   text-decoration: none;
-}
-.navbarmain{
-
-}
-.navbar-toggler-icon{
-
 }
 
 .carousel-inner{
@@ -57,7 +51,7 @@
   font-size: 1em;
 }
 .sfiboxsecond{
-  font-size: 1.4em;
+  font-size: 1.1em;
   height: 100%;
   position: relative;
 }
@@ -69,6 +63,9 @@
   display: inline-block;
   border-radius: 10px;
   color: #eee;
+}
+p.sfi-updated{
+  font-size: 0.85em;
 }
 p.sfititle{
   font-size: 1.3em;
@@ -82,7 +79,6 @@ p.sfititle{
   border-radius: 10px;
 }
 .pictureclass{
-  background-image: url("../img/testimg.jpg");
   background-size: cover;
   width:100%;
   -webkit-filter: blur(1px); /* Safari 6.0 - 9.0 */
@@ -111,4 +107,25 @@ border-bottom-right-radius: 10px;
   font-weight: 500;
   color: #444;
   font-size: 1.3em;
+}
+.news-title{
+  font-weight: 500;
+  color: #222;
+  font-size: 1.3em;
+}
+.news-date{
+  font-size: 0.8em;
+}
+.news-content{
+  font-size: 1em;
+}
+
+.archive-title{
+  font-weight: 500;
+  color: #222;
+  font-size: 1.3em;
+}
+
+.archive-categories li{
+  cursor: pointer;
 }

@@ -42,7 +42,7 @@ class Database{
   function get_home_data(){
     try{
       $returnData = array();
-      $stmt = $this->dbh->prepare("SELECT * FROM scientries ORDER BY id DESC LIMIT 2");
+      $stmt = $this->dbh->prepare("SELECT * FROM scientries ORDER BY id DESC LIMIT 3");
       $stmt->execute();
 
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -54,6 +54,7 @@ class Database{
           $obj->apl_date_end = $row["apl_date_end"];
           $obj->apl_geo = $row["apl_geo"];
           $obj->apl_social = $row["apl_social"];
+          $obj->quantqual = $row["quantqual"];
           $obj->stat_method = $row["stat_method"];
           $obj->stat_p = $row["stat_p"];
           $obj->stat_median1 = $row["stat_median1"];
@@ -74,7 +75,7 @@ class Database{
           $obj->p_hacking = $row["p_hacking"];
 
           foreach ($obj as $key => $value) {
-            if($value == "0" OR $value == 0){
+            if($value == "0"){
               unset($obj->$key);
             }
           }
@@ -89,5 +90,24 @@ class Database{
       die();
     }
   }
+
+  function get_archive_data(){
+    try{
+      $returnData = array();
+      $stmt = $this->dbh->prepare("SELECT * FROM scientries");
+      $stmt->execute();
+
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          $obj = new stdClass();
+          $obj->id = $row["id"];
+          $obj->category = $row["category"];
+          $returnData[] = $obj;
+      }
+      return $returnData;
+  }catch (PDOException $e){
+      echo "get_archive_data failed.";
+      die();
+  }
+}
 
 }
